@@ -41,13 +41,13 @@ Display all the images with their respective edge detected images.
 ## Developed By : P.Sanjay
 ## Register Number: 212220230042
 
-# Import the packages
+### Import the packages
 ```
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 ```
-# Load the image, Convert to grayscale and remove noise
+### Load the image, Convert to grayscale and remove noise
 ```
 image1=cv2.imread ('coco.jpg') 
 gray_image = cv2.cvtColor(image1,cv2.COLOR_BGR2GRAY)
@@ -55,7 +55,7 @@ gray_image = cv2.cvtColor(image1,cv2.COLOR_BGR2GRAY)
 plt.title('GRAY IMAGE')
 plt.imshow(gray_image,cmap = 'gray')
 ```
-# SOBEL EDGE DETECTOR
+### SOBEL EDGE DETECTOR
 ```
 img = cv2.GaussianBlur(gray,(3,3),0)
 sobelx = cv2.Sobel(gray_image,cv2.CV_64F,1,0,ksize=5)
@@ -82,14 +82,14 @@ plt.title('sobelxy')
 plt.xticks([]), plt.yticks([])
 plt.show()
 ```
-# LAPLACIAN EDGE DETECTOR
+### LAPLACIAN EDGE DETECTOR
 ```
 laplacian = cv2.Laplacian(gray_image,cv2.CV_64F)
 plt.imshow(laplacian,cmap='gray')
 plt.title('laplacian')
 plt.show()
 ```
-# CANNY EDGE DETECTOR
+### CANNY EDGE DETECTOR
 ```
 canny_edges = cv2.Canny(gray_image, 120, 150)
 plt.imshow(canny_edges,cmap='gray')
